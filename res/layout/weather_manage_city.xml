@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/weather_wh_mg_bg" >
+    
+    
+    <include
+        android:id="@+id/title"
+        layout="@layout/weather_weather_title_bar" />
+
+    <TextView
+        android:id="@+id/hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dip"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="20dip"
+        android:text="@string/weather_manage_hint"
+        android:textColor="#a2b0b4" />
+
+    <com.lewa.weather.view.TouchInterceptor
+        android:id="@+id/city_list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/hint"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_weight="1"
+        android:cacheColorHint="#00000000"
+        android:divider="#00000000"
+        android:drawSelectorOnTop="false"
+        android:fastScrollEnabled="true"
+        android:textSize="18sp" 
+        android:longClickable="false"/>
+
+    
+</RelativeLayout>

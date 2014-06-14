@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="weather_app_name">Weather</string>
+    <string name="weather_add_city">添加城市</string>
+    <string name="weather_find_city_hint">输入城市名称</string>
+    <string name="weather_manage_city">管理城市</string>
+    <string name="weather_manage_hint">拖动可对城市进行排序，第一位为默认城市。</string>
+    <string name="weather_alert_dialog_ok">确定</string>
+    <string name="weather_cityset_error">设置默认失败</string>
+    <string name="weather_cityadd_ok">添加城市成功</string>
+    <string name="weather_cityadd_error">添加城市失败</string>
+    <string name="weather_cityadd_error_1">城市已经存在</string>
+    <string name="weather_caozuo">操作</string>
+    <string name="weather_alert_dialog_cancel">取消</string>
+    <string name="weather_auto_update">自动更新：</string>
+    <string name="weather_update_frequency">更新频率：</string>
+    <string name="weather_update_per_hour">小时</string>
+    <string name="weather_setting_default_city">设置天气参数</string>
+    <string name="weather_refresh_weather">更新天气</string>
+    <string name="weather_config_weather_title">设置天气参数</string>
+    <string name="weather_config_weather_description">设置城市、是否自动更新</string>
+    <string name="weather_citydelete_error_2">不能删除所有城市</string>
+    <string name="weather_citydelete_ok">删除城市成功</string>
+    <string name="weather_citydelete_error">删除城市失败</string>
+    <string name="weather_city_auto_update_ok">设置成功</string>
+    <string name="weather_du">°</string>
+    <string name="weather_unknown">未知</string>
+    <string name="weather_last_update_time">最近更新时间</string>
+    <string name="weather_show_ins">显示在主日历中：</string>
+
+</resources>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:orientation="vertical">
+	  <RelativeLayout
+	  	android:layout_width="fill_parent"
+	  	android:layout_height="35dp"
+	  	android:layout_marginLeft="5dip"
+	  	android:layout_marginRight="5dip"
+	  	android:gravity="center_vertical">
+		<TextView
+			android:id="@+id/label_update_auto"
+			android:text="@string/weather_auto_update"
+			android:layout_width="wrap_content"
+	  		android:layout_height="wrap_content"
+			android:textSize="20dip"
+			android:textStyle="bold" />
+		<!--ImageView
+			android:id="@+id/weather_update_auto" 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			android:layout_marginLeft="5dip"
+			android:layout_toRightOf="@id/label_update_auto"/-->
+		
+		<LinearLayout android:id="@+id/weather_update_auto"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerVertical="true"
+	        android:orientation="horizontal"
+	      	android:layout_marginLeft="5dip"
+			android:layout_toRightOf="@id/label_update_auto"
+	        android:paddingTop="1dip"
+	    	android:paddingBottom="1dip">
+	        <TextView
+	        	android:id="@+id/text_left"
+	        	android:layout_width="fill_parent"
+	        	android:layout_height="fill_parent"
+	        	android:layout_weight="1"
+	        	android:gravity="center"
+	        	android:textColor="#7e7567"/>
+	        <TextView
+	        	android:id="@+id/text_right"
+	        	android:layout_width="fill_parent"
+	        	android:layout_height="fill_parent"
+	        	android:layout_weight="1"
+	        	android:gravity="center"
+	        	android:textColor="#f0e8d9"/>	
+	    </LinearLayout>    
+	  </RelativeLayout>
+
+	  <RelativeLayout
+	  	android:layout_width="fill_parent"
+	  	android:layout_height="wrap_content"
+	  	android:layout_marginTop="5dp"
+	  	android:layout_marginLeft="5dip"
+	  	android:layout_marginRight="5dip">
+		<TextView
+			android:id="@+id/label_update_round"
+			android:text="@string/weather_update_frequency"
+			android:layout_width="wrap_content"
+	  		android:layout_height="wrap_content"
+	  		android:layout_marginTop="5dip"
+			android:textSize="20dip"
+			android:textStyle="bold" />
+		<Spinner
+			android:id="@+id/weather_update_round" 
+			android:layout_width="100dip"
+			android:layout_height="45dip"
+			android:textSize="18dip"
+			android:textStyle="bold" 
+			android:layout_toRightOf="@id/label_update_round"/>
+		<TextView
+			android:id="@+id/lable_city"
+			android:text="@string/weather_update_per_hour"
+			android:layout_width="wrap_content"
+	  		android:layout_height="wrap_content"
+	  		android:layout_marginTop="5dip"
+			android:textSize="20dip"
+			android:textStyle="bold" 
+			android:layout_toRightOf="@id/weather_update_round"/>
+	  </RelativeLayout>
+
+	  <RelativeLayout
+	      android:layout_width="fill_parent"
+	      android:layout_height="wrap_content"
+	      android:layout_marginTop="5dp"
+	  	android:layout_marginLeft="5dip"
+	  	android:layout_marginRight="5dip" >
+
+	      <TextView
+	          android:id="@+id/label_show"
+	          android:layout_width="wrap_content"
+	          android:layout_height="wrap_content"
+	          android:layout_alignParentLeft="true"
+	          android:layout_alignParentTop="true"
+	          android:text="@string/weather_show_ins"
+	          android:textSize="20dip"
+	          android:textStyle="bold" />
+
+	      <LinearLayout android:id="@+id/show_in_main"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerVertical="true"
+	        android:orientation="horizontal"
+	      	android:layout_marginLeft="5dip"
+			android:layout_toRightOf="@id/label_show"
+	        android:paddingTop="1dip"
+	    	android:paddingBottom="1dip">
+	        <TextView
+	        	android:id="@+id/show_text_left"
+	        	android:layout_width="fill_parent"
+	        	android:layout_height="fill_parent"
+	        	android:layout_weight="1"
+	        	android:gravity="center"
+	        	android:textColor="#7e7567"/>
+	        <TextView
+	        	android:id="@+id/show_text_right"
+	        	android:layout_width="fill_parent"
+	        	android:layout_height="fill_parent"
+	        	android:layout_weight="1"
+	        	android:gravity="center"
+	        	android:textColor="#f0e8d9"/>	
+	    </LinearLayout>  
+	  </RelativeLayout>
+
+</LinearLayout>

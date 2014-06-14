@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="com.lewa.weather" android:versionCode="1" android:versionName="weather 1.0">
+	<uses-sdk android:minSdkVersion="14" />
+	<uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"/>
+	<application  android:label="@string/app_name" android:name=".App" android:icon="@drawable/weathericon" android:persistent="true">
+	    <activity android:name="com.lewa.weather.LewaWeather" android:launchMode="singleTask" android:theme="@android:style/Theme.Holo.Light" android:screenOrientation="portrait">
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            
+        </activity>
+         <activity android:name="com.lewa.weather.LewaWeatherSetting" android:launchMode="singleTask"  android:screenOrientation="portrait">
+        </activity>
+		<activity
+            android:name="com.lewa.weather.Weather"
+            android:screenOrientation="portrait">
+        </activity> 
+        <activity android:name="com.lewa.weather.ManageCity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity android:name="com.lewa.weather.SelectCityActivity" 
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light" 
+            >
+        </activity>
+        
+        <service android:name="com.lewa.weather.entity.WeatherService"></service>
+         <receiver android:label="@string/time_v5" android:name="com.lewa.weather.WeatherWidgetV5_time" >
+            <intent-filter>  
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" /> 
+                <action android:name="com.android.UPDATE_WIDGET"></action>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>  
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_v5_time"></meta-data>
+        </receiver>
+          <receiver android:label="@string/widget_v5" android:name="com.lewa.weather.WeatherWidgetV5_weather" >
+            <intent-filter>  
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" /> 
+                <action android:name="com.android.UPDATE_WIDGET"></action>
+                <action android:name="com.lewa.weather.UPDATE_WIDGET_NEXT_LAYOUT"></action>
+                <action android:name="com.lewa.weather.widget.refresh"></action>
+                <action android:name="com.when.android.calendar365.lewa.weather.WEATHER_NUMBER_TIME_CITY_CHANGE_CITY"></action>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>  
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_v5_weather"></meta-data>
+        </receiver>
+		
+		<receiver android:name="com.lewa.weather.receiver.WidgetReceiver">
+        	<intent-filter>
+        	    <action android:name="android.intent.action.TIME_TICK"></action>
+        		<action android:name="android.intent.action.DATE_CHANGED"></action>
+				<action android:name="android.intent.action.TIME_SET"></action>
+				<action android:name="android.intent.action.TIMEZONE_CHANGED"></action>
+        	</intent-filter>
+        </receiver>
+		
+		 <service
+			android:name="com.lewa.weather.receiver.WidgetTimeService">  
+		</service>
+
+        
+        <receiver android:name="com.lewa.weather.receiver.WeatherReceiver">
+        	<intent-filter>
+				<action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+				<action android:name="com.when.android.calendar365.lewa.action.WEATHER_UPDATE"/>
+			</intent-filter>
+        </receiver>
+        <!--  
+          <provider android:name="com.lewa.weather.provider.CalendarProvider"
+            android:authorities="com.lewa.weather.calendar"
+            android:multiprocess="true"
+            android:readPermission="com.when.android.calendar365.provider.tool.PERMISSION.READ"
+            android:exported="true"
+            >
+        </provider>
+        -->
+        
+           <provider android:name="com.lewa.weather.provider.LewaProvider"
+            android:authorities="com.lewa.weather"
+            android:multiprocess="true"
+            android:process=":provider"
+            android:exported="true"
+            >
+        </provider>
+       <!-- 
+        <receiver android:name="com.lewa.weather.receiver.TimeWidgetReceiver">
+        	<intent-filter>
+        		<action android:name="com.when.action.UPDATE_WIDGET_ALARM"/>
+        		<action android:name="android.intent.action.BOOT_COMPLETED"/>
+        		<action android:name="android.appwidget.action.APPWIDGET_UPDATE"></action>
+        	</intent-filter>
+        </receiver>  --> 
+        
+        <!--  
+        <meta-data android:value="com.lewa.weather.calendar" android:name="authority" />
+		<meta-data android:value="1" android:name="when_version"/>
+		<receiver android:name="com.when.android.calendar365.tools.util.WhenReceiver">
+            <intent-filter>
+                <action android:name="com.when.android.action.TOOLS_GET_REGISTRATION" />
+            </intent-filter>
+            <intent-filter>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>-->
+	</application>
+
+	
+	<uses-permission android:name="android.permission.GET_TASKS"/>
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	<uses-permission android:name="android.permission.VIBRATE" />
+	<uses-permission android:name="android.permission.READ_LOGS" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+	<uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+	<uses-permission android:name="android.permission.USE_CREDENTIALS" />
+	<uses-permission android:name="android.permission.GET_ACCOUNTS" />
+	<uses-permission android:name="android.permission.RESTART_PACKAGES" />
+	<uses-permission android:name="android.permission.READ_CONTACTS" />
+	<uses-permission android:name="android.permission.RECORD_AUDIO" />
+</manifest> 
